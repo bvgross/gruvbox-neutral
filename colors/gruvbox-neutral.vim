@@ -108,12 +108,12 @@ let s:gb.light4      = ['#969696', 246]     " 168-153-132
 let s:gb.light4_256  = ['#969696', 246]     " 168-153-132
 
 let s:gb.bright_red     = ['#fb4934', 167]     " 251-73-52
-let s:gb.bright_green   = ['#b8bb26', 208]     " 184-187-38
+let s:gb.bright_green   = ['#b8bb26', 142]     " 184-187-38
 let s:gb.bright_yellow  = ['#fabd2f', 214]     " 250-189-47
 let s:gb.bright_blue    = ['#83a598', 109]     " 131-165-152
 let s:gb.bright_purple  = ['#d3869b', 175]     " 211-134-155
 let s:gb.bright_aqua    = ['#8ec07c', 108]     " 142-192-124
-let s:gb.bright_orange  = ['#fe8019', 142]     " 254-128-25
+let s:gb.bright_orange  = ['#fe8019', 208]     " 254-128-25
 
 let s:gb.neutral_red    = ['#cc241d', 124]     " 204-36-29
 let s:gb.neutral_green  = ['#98971a', 106]     " 152-151-26
@@ -595,7 +595,7 @@ hi! link Keyword gruvboxNeutralRed
 " Variable name
 hi! link Identifier gruvboxNeutralBlue
 " Function name
-hi! link Function gruvboxNeutralGreenBold
+hi! link Function gruvboxNeutralOrangeBold
 
 " Generic preprocessor
 hi! link PreProc gruvboxNeutralAqua
@@ -619,11 +619,11 @@ else
   call s:HL('String',  s:fg1, s:bg1, s:italicize_strings)
 endif
 " Boolean constant: TRUE, false
-hi! link Boolean gruvboxNeutralPurple
+hi! link Boolean gruvboxNeutralRedBold
 " Number constant: 234, 0xff
-hi! link Number gruvboxNeutralPurple
+hi! link Number gruvboxNeutralGreen
 " Floating point constant: 2.3e10
-hi! link Float gruvboxNeutralPurple
+hi! link Float gruvboxNeutralGreen
 
 " Generic type
 hi! link Type gruvboxNeutralYellow
