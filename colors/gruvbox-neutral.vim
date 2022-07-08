@@ -1405,11 +1405,11 @@ hi! link jsonString gruvboxNeutralFg1
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
 
-function! gruvboxNeutralHlsShowCursor()
+function! s:gruvboxNeutralHlsShowCursor()
   call s:HL('Cursor', s:bg0, s:hls_cursor)
 endfunction
 
-function! gruvboxNeutralHlsHideCursor()
+function! s:gruvboxNeutralHlsHideCursor()
   call s:HL('Cursor', s:none, s:none, s:inverse)
 endfunction
 
