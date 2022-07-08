@@ -595,7 +595,7 @@ hi! link Keyword gruvboxNeutralRed
 " Variable name
 hi! link Identifier gruvboxNeutralBlue
 " Function name
-hi! link Function gruvboxNeutralOrangeBold
+hi! link Function gruvboxNeutralYellowBold
 
 " Generic preprocessor
 hi! link PreProc gruvboxNeutralAqua
@@ -626,13 +626,13 @@ hi! link Number gruvboxNeutralGreen
 hi! link Float gruvboxNeutralGreen
 
 " Generic type
-hi! link Type gruvboxNeutralYellow
+hi! link Type gruvboxNeutralOrange
 " static, register, volatile, etc
-hi! link StorageClass gruvboxNeutralOrange
+hi! link StorageClass gruvboxNeutralYellow
 " struct, union, enum, etc.
 hi! link Structure gruvboxNeutralAqua
 " typedef
-hi! link Typedef gruvboxNeutralYellow
+hi! link Typedef gruvboxNeutralOrange
 
 " }}}
 " Completion Menu: {{{
