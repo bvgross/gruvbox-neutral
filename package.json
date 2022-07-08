@@ -1,8 +1,8 @@
 {
-  "name": "gruvbox",
-  "version": "2.0.0",
-  "repository": "git@github.com:morhetz/gruvbox.git",
-  "author": "Pavel Pertsev <morhetz@gmail.com>",
+  "name": "gruvbox-neutral",
+  "version": "0.0.1",
+  "repository": "https://github.com/bvgross/gruvbox-neutral.git",
+  "author": "Bruno Ventura Gross <bvgross@gmx.com>",
   "license": "MIT",
   "vim": {
     "opt": true
