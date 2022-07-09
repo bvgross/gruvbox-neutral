@@ -578,7 +578,7 @@ call s:HL('Todo', s:vim_fg, s:vim_bg, s:bold . s:italic)
 call s:HL('Error', s:red, s:vim_bg, s:bold . s:inverse)
 
 " Generic statement
-hi! link Statement gruvboxNeutralRed
+hi! link Statement gruvboxNeutralBlue
 " if, then, else, endif, swicth, etc.
 hi! link Conditional gruvboxNeutralRed
 " for, do, while, etc.
