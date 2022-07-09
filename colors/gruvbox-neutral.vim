@@ -588,7 +588,7 @@ hi! link Label gruvboxNeutralRed
 " try, catch, throw
 hi! link Exception gruvboxNeutralRed
 " sizeof, "+", "*", etc.
-hi! link Operator Normal
+hi! link Operator gruvboxNeutralBlue
 " Any other keyword
 hi! link Keyword gruvboxNeutralRed
 
@@ -600,13 +600,13 @@ hi! link Function gruvboxNeutralYellowBold
 " Generic preprocessor
 hi! link PreProc gruvboxNeutralAqua
 " Preprocessor #include
-hi! link Include gruvboxNeutralAqua
+hi! link Include gruvboxNeutralGray
 " Preprocessor #define
-hi! link Define gruvboxNeutralAqua
+hi! link Define gruvboxNeutralGray
 " Same as Define
 hi! link Macro gruvboxNeutralAqua
 " Preprocessor #if, #else, #endif, etc.
-hi! link PreCondit gruvboxNeutralAqua
+hi! link PreCondit gruvboxNeutralRed
 
 " Generic constant
 hi! link Constant gruvboxNeutralPurple
@@ -621,9 +621,9 @@ endif
 " Boolean constant: TRUE, false
 hi! link Boolean gruvboxNeutralRedBold
 " Number constant: 234, 0xff
-hi! link Number gruvboxNeutralGreen
+hi! link Number gruvboxNeutralGreenBold
 " Floating point constant: 2.3e10
-hi! link Float gruvboxNeutralGreen
+hi! link Float gruvboxNeutralGreenBold
 
 " Generic type
 hi! link Type gruvboxNeutralOrange
