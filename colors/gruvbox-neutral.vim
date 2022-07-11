@@ -580,13 +580,13 @@ call s:HL('Error', s:red, s:vim_bg, s:bold . s:inverse)
 " Generic statement
 hi! link Statement gruvboxNeutralBlue
 " if, then, else, endif, swicth, etc.
-hi! link Conditional gruvboxNeutralRed
+hi! link Conditional gruvboxNeutralPurple
 " for, do, while, etc.
-hi! link Repeat gruvboxNeutralRed
+hi! link Repeat gruvboxNeutralPurple
 " case, default, etc.
-hi! link Label gruvboxNeutralRed
+hi! link Label gruvboxNeutralPurple
 " try, catch, throw
-hi! link Exception gruvboxNeutralRed
+hi! link Exception gruvboxNeutralPurple
 " sizeof, "+", "*", etc.
 hi! link Operator gruvboxNeutralBlue
 " Any other keyword
