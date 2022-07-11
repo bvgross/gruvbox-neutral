@@ -590,7 +590,7 @@ hi! link Exception gruvboxNeutralPurple
 " sizeof, "+", "*", etc.
 hi! link Operator gruvboxNeutralBlue
 " Any other keyword
-hi! link Keyword gruvboxNeutralRed
+hi! link Keyword gruvboxNeutralRedBold
 
 " Variable name
 hi! link Identifier gruvboxNeutralBlue
