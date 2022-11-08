@@ -1,0 +1,21 @@
+{
+  "name": "supernova-theme",
+  "displayName": "superNova",
+  "description": "A Theme based lightly on gruvbox but with less washed colors.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "superNova",
+        "uiTheme": "vs-dark",
+        "path": "./themes/superNova-color-theme.json"
+      }
+    ]
+  }
+}
