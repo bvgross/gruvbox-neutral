@@ -1,15 +1,21 @@
 {
-  "name": "supernova-theme",
-  "displayName": "superNova",
-  "description": "A Theme based lightly on gruvbox but with less washed colors.",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.73.0"
-  },
-  "categories": [
-    "Themes"
-  ],
-  "contributes": {
+		"name": "supernova-theme",
+		"displayName": "superNova",
+		"description": "A Theme based lightly on gruvbox but with less washed colors.",
+		"version": "0.0.1",
+		"engines": {
+				"vscode": "^1.73.0"
+		},
+		"author": {
+				"name": "Bruno Ventura Gross"
+		},
+		"publisher": "bvgross",
+		"categories": [
+				"Themes"
+		],
+		"repository": "https://github.com/bvgross/superNovaTheme/tree/master/vscode/supernova-theme",
+		"license": "MIT",
+		"contributes": {
     "themes": [
       {
         "label": "superNova",
