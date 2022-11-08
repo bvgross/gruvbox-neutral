@@ -1,7 +1,7 @@
 {
-  "name": "gruvbox-neutral",
-  "version": "0.0.1",
-  "repository": "https://github.com/bvgross/gruvbox-neutral.git",
+  "name": "superNova",
+  "version": "0.0.",
+  "repository": "https://github.com/bvgross/superNovaTheme.git",
   "author": "Bruno Ventura Gross <bvgross@gmx.com>",
   "license": "MIT",
   "vim": {

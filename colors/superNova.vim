@@ -2,7 +2,7 @@
 " File: superNova.vim
 " Description: Retro groove color scheme for Vim based on gruvbox
 " Author: bvgross <bvgross@gmx.com>
-" Source: https://github.com/bvgross/gruvbox-neutral
+" Source: https://github.com/bvgross/superNova
 " Last Modified: 08 jul 2022
 " -----------------------------------------------------------------------------
 
@@ -25,56 +25,56 @@ endif
 " }}}
 " Global Settings: {{{
 
-if !exists('g:gruvboxNeutral_bold')
-  let g:gruvboxNeutral_bold=1
+if !exists('g:superNova_bold')
+  let g:superNova_bold=1
 endif
-if !exists('g:gruvboxNeutral_italic')
+if !exists('g:superNova_italic')
   if has('gui_running') || $TERM_ITALICS == 'true'
-    let g:gruvboxNeutral_italic=1
+    let g:superNova_italic=1
   else
-    let g:gruvboxNeutral_italic=0
+    let g:superNova_italic=0
   endif
 endif
-if !exists('g:gruvboxNeutral_undercurl')
-  let g:gruvboxNeutral_undercurl=1
+if !exists('g:superNova_undercurl')
+  let g:superNova_undercurl=1
 endif
-if !exists('g:gruvboxNeutral_underline')
-  let g:gruvboxNeutral_underline=1
+if !exists('g:superNova_underline')
+  let g:superNova_underline=1
 endif
-if !exists('g:gruvboxNeutral_inverse')
-  let g:gruvboxNeutral_inverse=1
-endif
-
-if !exists('g:gruvboxNeutral_guisp_fallback') || index(['fg', 'bg'], g:gruvboxNeutral_guisp_fallback) == -1
-  let g:gruvboxNeutral_guisp_fallback='NONE'
+if !exists('g:superNova_inverse')
+  let g:superNova_inverse=1
 endif
 
-if !exists('g:gruvboxNeutral_improved_strings')
-  let g:gruvboxNeutral_improved_strings=0
+if !exists('g:superNova_guisp_fallback') || index(['fg', 'bg'], g:superNova_guisp_fallback) == -1
+  let g:superNova_guisp_fallback='NONE'
 endif
 
-if !exists('g:gruvboxNeutral_improved_warnings')
-  let g:gruvboxNeutral_improved_warnings=0
+if !exists('g:superNova_improved_strings')
+  let g:superNova_improved_strings=0
 endif
 
-if !exists('g:gruvboxNeutral_termcolors')
-  let g:gruvboxNeutral_termcolors=256
+if !exists('g:superNova_improved_warnings')
+  let g:superNova_improved_warnings=0
 endif
 
-if !exists('g:gruvboxNeutral_invert_indent_guides')
-  let g:gruvboxNeutral_invert_indent_guides=0
+if !exists('g:superNova_termcolors')
+  let g:superNova_termcolors=256
 endif
 
-if exists('g:gruvboxNeutral_contrast')
-  echo 'g:gruvboxNeutral_contrast is deprecated; use g:gruvboxNeutral_contrast_light and g:gruvboxNeutral_contrast_dark instead'
+if !exists('g:superNova_invert_indent_guides')
+  let g:superNova_invert_indent_guides=0
 endif
 
-if !exists('g:gruvboxNeutral_contrast_dark')
-  let g:gruvboxNeutral_contrast_dark='medium'
+if exists('g:superNova_contrast')
+  echo 'g:superNova_contrast is deprecated; use g:superNova_contrast_light and g:superNova_contrast_dark instead'
 endif
 
-if !exists('g:gruvboxNeutral_contrast_light')
-  let g:gruvboxNeutral_contrast_light='medium'
+if !exists('g:superNova_contrast_dark')
+  let g:superNova_contrast_dark='medium'
+endif
+
+if !exists('g:superNova_contrast_light')
+  let g:superNova_contrast_light='medium'
 endif
 
 let s:is_dark=(&background == 'dark')
@@ -135,27 +135,27 @@ let s:gb.faded_orange   = ['#af3a03', 130]     " 175-58-3
 " Setup Emphasis: {{{
 
 let s:bold = 'bold,'
-if g:gruvboxNeutral_bold == 0
+if g:superNova_bold == 0
   let s:bold = ''
 endif
 
 let s:italic = 'italic,'
-if g:gruvboxNeutral_italic == 0
+if g:superNova_italic == 0
   let s:italic = ''
 endif
 
 let s:underline = 'underline,'
-if g:gruvboxNeutral_underline == 0
+if g:superNova_underline == 0
   let s:underline = ''
 endif
 
 let s:undercurl = 'undercurl,'
-if g:gruvboxNeutral_undercurl == 0
+if g:superNova_undercurl == 0
   let s:undercurl = ''
 endif
 
 let s:inverse = 'inverse,'
-if g:gruvboxNeutral_inverse == 0
+if g:superNova_inverse == 0
   let s:inverse = ''
 endif
 
@@ -169,9 +169,9 @@ let s:none = ['NONE', 'NONE']
 " determine relative colors
 if s:is_dark
   let s:bg0  = s:gb.dark0
-  if g:gruvboxNeutral_contrast_dark == 'soft'
+  if g:superNova_contrast_dark == 'soft'
     let s:bg0  = s:gb.dark0_soft
-  elseif g:gruvboxNeutral_contrast_dark == 'hard'
+  elseif g:superNova_contrast_dark == 'hard'
     let s:bg0  = s:gb.dark0_hard
   endif
 
@@ -199,9 +199,9 @@ if s:is_dark
   let s:orange = s:gb.bright_orange
 else
   let s:bg0  = s:gb.light0
-  if g:gruvboxNeutral_contrast_light == 'soft'
+  if g:superNova_contrast_light == 'soft'
     let s:bg0  = s:gb.light0_soft
-  elseif g:gruvboxNeutral_contrast_light == 'hard'
+  elseif g:superNova_contrast_light == 'hard'
     let s:bg0  = s:gb.light0_hard
   endif
 
@@ -230,7 +230,7 @@ else
 endif
 
 " reset to 16 colors fallback
-if g:gruvboxNeutral_termcolors == 16
+if g:superNova_termcolors == 16
   let s:bg0[1]    = 0
   let s:fg4[1]    = 7
   let s:gray[1]   = 8
@@ -301,13 +301,13 @@ endif
 " Overload Setting: {{{
 
 let s:hls_cursor = s:orange
-if exists('g:gruvboxNeutral_hls_cursor')
-  let s:hls_cursor = get(s:gb, g:gruvboxNeutral_hls_cursor)
+if exists('g:superNova_hls_cursor')
+  let s:hls_cursor = get(s:gb, g:superNova_hls_cursor)
 endif
 
 let s:number_column = s:none
-if exists('g:gruvboxNeutral_number_column')
-  let s:number_column = get(s:gb, g:gruvboxNeutral_number_column)
+if exists('g:superNova_number_column')
+  let s:number_column = get(s:gb, g:superNova_number_column)
 endif
 
 let s:sign_column = s:bg1
@@ -318,52 +318,52 @@ if exists('g:gitgutter_override_sign_column_highlight') &&
 else
   let g:gitgutter_override_sign_column_highlight = 0
 
-  if exists('g:gruvboxNeutral_sign_column')
-    let s:sign_column = get(s:gb, g:gruvboxNeutral_sign_column)
+  if exists('g:superNova_sign_column')
+    let s:sign_column = get(s:gb, g:superNova_sign_column)
   endif
 endif
 
 let s:color_column = s:bg1
-if exists('g:gruvboxNeutral_color_column')
-  let s:color_column = get(s:gb, g:gruvboxNeutral_color_column)
+if exists('g:superNova_color_column')
+  let s:color_column = get(s:gb, g:superNova_color_column)
 endif
 
 let s:vert_split = s:bg0
-if exists('g:gruvboxNeutral_vert_split')
-  let s:vert_split = get(s:gb, g:gruvboxNeutral_vert_split)
+if exists('g:superNova_vert_split')
+  let s:vert_split = get(s:gb, g:superNova_vert_split)
 endif
 
 let s:invert_signs = ''
-if exists('g:gruvboxNeutral_invert_signs')
-  if g:gruvboxNeutral_invert_signs == 1
+if exists('g:superNova_invert_signs')
+  if g:superNova_invert_signs == 1
     let s:invert_signs = s:inverse
   endif
 endif
 
 let s:invert_selection = s:inverse
-if exists('g:gruvboxNeutral_invert_selection')
-  if g:gruvboxNeutral_invert_selection == 0
+if exists('g:superNova_invert_selection')
+  if g:superNova_invert_selection == 0
     let s:invert_selection = ''
   endif
 endif
 
 let s:invert_tabline = ''
-if exists('g:gruvboxNeutral_invert_tabline')
-  if g:gruvboxNeutral_invert_tabline == 1
+if exists('g:superNova_invert_tabline')
+  if g:superNova_invert_tabline == 1
     let s:invert_tabline = s:inverse
   endif
 endif
 
 let s:italicize_comments = s:italic
-if exists('g:gruvboxNeutral_italicize_comments')
-  if g:gruvboxNeutral_italicize_comments == 0
+if exists('g:superNova_italicize_comments')
+  if g:superNova_italicize_comments == 0
     let s:italicize_comments = ''
   endif
 endif
 
 let s:italicize_strings = ''
-if exists('g:gruvboxNeutral_italicize_strings')
-  if g:gruvboxNeutral_italicize_strings == 1
+if exists('g:superNova_italicize_strings')
+  if g:superNova_italicize_strings == 1
     let s:italicize_strings = s:italic
   endif
 endif
@@ -393,12 +393,12 @@ function! s:HL(group, fg, ...)
 
   " special fallback
   if a:0 >= 3
-    if g:gruvboxNeutral_guisp_fallback != 'NONE'
+    if g:superNova_guisp_fallback != 'NONE'
       let fg = a:3
     endif
 
     " bg fallback mode should invert higlighting
-    if g:gruvboxNeutral_guisp_fallback == 'bg'
+    if g:superNova_guisp_fallback == 'bg'
       let emstr .= 'inverse,'
     endif
   endif
@@ -418,43 +418,43 @@ function! s:HL(group, fg, ...)
 endfunction
 
 " }}}
-" gruvboxNeutral Hi Groups: {{{
+" superNova Hi Groups: {{{
 
 " memoize common hi groups
-call s:HL('gruvboxNeutralFg0', s:fg0)
-call s:HL('gruvboxNeutralFg1', s:fg1)
-call s:HL('gruvboxNeutralFg2', s:fg2)
-call s:HL('gruvboxNeutralFg3', s:fg3)
-call s:HL('gruvboxNeutralFg4', s:fg4)
-call s:HL('gruvboxNeutralGray', s:gray)
-call s:HL('gruvboxNeutralBg0', s:bg0)
-call s:HL('gruvboxNeutralBg1', s:bg1)
-call s:HL('gruvboxNeutralBg2', s:bg2)
-call s:HL('gruvboxNeutralBg3', s:bg3)
-call s:HL('gruvboxNeutralBg4', s:bg4)
+call s:HL('superNovaFg0', s:fg0)
+call s:HL('superNovaFg1', s:fg1)
+call s:HL('superNovaFg2', s:fg2)
+call s:HL('superNovaFg3', s:fg3)
+call s:HL('superNovaFg4', s:fg4)
+call s:HL('superNovaGray', s:gray)
+call s:HL('superNovaBg0', s:bg0)
+call s:HL('superNovaBg1', s:bg1)
+call s:HL('superNovaBg2', s:bg2)
+call s:HL('superNovaBg3', s:bg3)
+call s:HL('superNovaBg4', s:bg4)
 
-call s:HL('gruvboxNeutralRed', s:red)
-call s:HL('gruvboxNeutralRedBold', s:red, s:none, s:bold)
-call s:HL('gruvboxNeutralGreen', s:green)
-call s:HL('gruvboxNeutralGreenBold', s:green, s:none, s:bold)
-call s:HL('gruvboxNeutralYellow', s:yellow)
-call s:HL('gruvboxNeutralYellowBold', s:yellow, s:none, s:bold)
-call s:HL('gruvboxNeutralBlue', s:blue)
-call s:HL('gruvboxNeutralBlueBold', s:blue, s:none, s:bold)
-call s:HL('gruvboxNeutralPurple', s:purple)
-call s:HL('gruvboxNeutralPurpleBold', s:purple, s:none, s:bold)
-call s:HL('gruvboxNeutralAqua', s:aqua)
-call s:HL('gruvboxNeutralAquaBold', s:aqua, s:none, s:bold)
-call s:HL('gruvboxNeutralOrange', s:orange)
-call s:HL('gruvboxNeutralOrangeBold', s:orange, s:none, s:bold)
+call s:HL('superNovaRed', s:red)
+call s:HL('superNovaRedBold', s:red, s:none, s:bold)
+call s:HL('superNovaGreen', s:green)
+call s:HL('superNovaGreenBold', s:green, s:none, s:bold)
+call s:HL('superNovaYellow', s:yellow)
+call s:HL('superNovaYellowBold', s:yellow, s:none, s:bold)
+call s:HL('superNovaBlue', s:blue)
+call s:HL('superNovaBlueBold', s:blue, s:none, s:bold)
+call s:HL('superNovaPurple', s:purple)
+call s:HL('superNovaPurpleBold', s:purple, s:none, s:bold)
+call s:HL('superNovaAqua', s:aqua)
+call s:HL('superNovaAquaBold', s:aqua, s:none, s:bold)
+call s:HL('superNovaOrange', s:orange)
+call s:HL('superNovaOrangeBold', s:orange, s:none, s:bold)
 
-call s:HL('gruvboxNeutralRedSign', s:red, s:sign_column, s:invert_signs)
-call s:HL('gruvboxNeutralGreenSign', s:green, s:sign_column, s:invert_signs)
-call s:HL('gruvboxNeutralYellowSign', s:yellow, s:sign_column, s:invert_signs)
-call s:HL('gruvboxNeutralBlueSign', s:blue, s:sign_column, s:invert_signs)
-call s:HL('gruvboxNeutralPurpleSign', s:purple, s:sign_column, s:invert_signs)
-call s:HL('gruvboxNeutralAquaSign', s:aqua, s:sign_column, s:invert_signs)
-call s:HL('gruvboxNeutralOrangeSign', s:orange, s:sign_column, s:invert_signs)
+call s:HL('superNovaRedSign', s:red, s:sign_column, s:invert_signs)
+call s:HL('superNovaGreenSign', s:green, s:sign_column, s:invert_signs)
+call s:HL('superNovaYellowSign', s:yellow, s:sign_column, s:invert_signs)
+call s:HL('superNovaBlueSign', s:blue, s:sign_column, s:invert_signs)
+call s:HL('superNovaPurpleSign', s:purple, s:sign_column, s:invert_signs)
+call s:HL('superNovaAquaSign', s:aqua, s:sign_column, s:invert_signs)
+call s:HL('superNovaOrangeSign', s:orange, s:sign_column, s:invert_signs)
 
 " }}}
 
@@ -466,7 +466,7 @@ call s:HL('Normal', s:fg1, s:bg0)
 
 " Correct background (see issue #7):
 " --- Problem with changing between dark and light on 256 color terminal
-" --- https://github.com/morhetz/gruvboxNeutral/issues/7
+" --- https://github.com/morhetz/superNova/issues/7
 if s:is_dark
   set background=dark
 else
@@ -501,8 +501,8 @@ if version >= 703
   call s:HL('CursorLineNr', s:yellow, s:bg1)
 endif
 
-hi! link NonText gruvboxNeutralBg2
-hi! link SpecialKey gruvboxNeutralBg2
+hi! link NonText superNovaBg2
+hi! link SpecialKey superNovaBg2
 
 call s:HL('Visual',    s:none,  s:bg3, s:invert_selection)
 hi! link VisualNOS Visual
@@ -522,21 +522,21 @@ call s:HL('VertSplit', s:bg3, s:vert_split)
 call s:HL('WildMenu', s:blue, s:bg2, s:bold)
 
 " Directory names, special names in listing
-hi! link Directory gruvboxNeutralGreenBold
+hi! link Directory superNovaGreenBold
 
 " Titles for output from :set all, :autocmd, etc.
-hi! link Title gruvboxNeutralGreenBold
+hi! link Title superNovaGreenBold
 
 " Error messages on the command line
 call s:HL('ErrorMsg',   s:bg0, s:red, s:bold)
 " More prompt: -- More --
-hi! link MoreMsg gruvboxNeutralYellowBold
+hi! link MoreMsg superNovaYellowBold
 " Current mode message: -- INSERT --
-hi! link ModeMsg gruvboxNeutralYellowBold
+hi! link ModeMsg superNovaYellowBold
 " 'Press enter' prompt and yes/no questions
-hi! link Question gruvboxNeutralOrangeBold
+hi! link Question superNovaOrangeBold
 " Warning messages
-hi! link WarningMsg gruvboxNeutralRedBold
+hi! link WarningMsg superNovaRedBold
 
 " }}}
 " Gutter: {{{
@@ -567,8 +567,8 @@ hi! link lCursor Cursor
 " }}}
 " Syntax Highlighting: {{{
 
-if g:gruvboxNeutral_improved_strings == 0
-  hi! link Special gruvboxNeutralOrange
+if g:superNova_improved_strings == 0
+  hi! link Special superNovaOrange
 else
   call s:HL('Special', s:orange, s:bg1, s:italicize_strings)
 endif
@@ -578,61 +578,61 @@ call s:HL('Todo', s:vim_fg, s:vim_bg, s:bold . s:italic)
 call s:HL('Error', s:red, s:vim_bg, s:bold . s:inverse)
 
 " Generic statement
-hi! link Statement gruvboxNeutralBlue
+hi! link Statement superNovaBlue
 " if, then, else, endif, swicth, etc.
-hi! link Conditional gruvboxNeutralPurple
+hi! link Conditional superNovaPurple
 " for, do, while, etc.
-hi! link Repeat gruvboxNeutralPurple
+hi! link Repeat superNovaPurple
 " case, default, etc.
-hi! link Label gruvboxNeutralPurple
+hi! link Label superNovaPurple
 " try, catch, throw
-hi! link Exception gruvboxNeutralPurple
+hi! link Exception superNovaPurple
 " sizeof, "+", "*", etc.
-hi! link Operator gruvboxNeutralBlue
+hi! link Operator superNovaBlue
 " Any other keyword
-hi! link Keyword gruvboxNeutralRed
+hi! link Keyword superNovaRed
 
 " Variable name
-hi! link Identifier gruvboxNeutralBlue
+hi! link Identifier superNovaBlue
 " Function name
-hi! link Function gruvboxNeutralYellowBold
+hi! link Function superNovaYellowBold
 
 " Generic preprocessor
-hi! link PreProc gruvboxNeutralAqua
+hi! link PreProc superNovaAqua
 " Preprocessor #include
-hi! link Include gruvboxNeutralGray
+hi! link Include superNovaGray
 " Preprocessor #define
-hi! link Define gruvboxNeutralGray
+hi! link Define superNovaGray
 " Same as Define
-hi! link Macro gruvboxNeutralAqua
+hi! link Macro superNovaAqua
 " Preprocessor #if, #else, #endif, etc.
-hi! link PreCondit gruvboxNeutralRed
+hi! link PreCondit superNovaRed
 
 " Generic constant
-hi! link Constant gruvboxNeutralPurple
+hi! link Constant superNovaPurple
 " Character constant: 'c', '/n'
-hi! link Character gruvboxNeutralPurple
+hi! link Character superNovaPurple
 " String constant: "this is a string"
-if g:gruvboxNeutral_improved_strings == 0
+if g:superNova_improved_strings == 0
   call s:HL('String',  s:aqua, s:none, s:italicize_strings)
 else
   call s:HL('String',  s:fg1, s:bg1, s:italicize_strings)
 endif
 " Boolean constant: TRUE, false
-hi! link Boolean gruvboxNeutralRedBold
+hi! link Boolean superNovaRedBold
 " Number constant: 234, 0xff
-hi! link Number gruvboxNeutralGreenBold
+hi! link Number superNovaGreenBold
 " Floating point constant: 2.3e10
-hi! link Float gruvboxNeutralGreenBold
+hi! link Float superNovaGreenBold
 
 " Generic type
-hi! link Type gruvboxNeutralOrange
+hi! link Type superNovaOrange
 " static, register, volatile, etc
-hi! link StorageClass gruvboxNeutralYellow
+hi! link StorageClass superNovaYellow
 " struct, union, enum, etc.
-hi! link Structure gruvboxNeutralAqua
+hi! link Structure superNovaAqua
 " typedef
-hi! link Typedef gruvboxNeutralOrange
+hi! link Typedef superNovaOrange
 
 " }}}
 " Completion Menu: {{{
@@ -665,7 +665,7 @@ call s:HL('DiffText',   s:yellow, s:bg0, s:inverse)
 
 if has("spell")
   " Not capitalised word, or compile warnings
-  if g:gruvboxNeutral_improved_warnings == 0
+  if g:superNova_improved_warnings == 0
     call s:HL('SpellCap',   s:none, s:none, s:undercurl, s:red)
   else
     call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
@@ -700,7 +700,7 @@ if !exists('g:indent_guides_auto_colors')
 endif
 
 if g:indent_guides_auto_colors == 0
-  if g:gruvboxNeutral_invert_indent_guides == 0
+  if g:superNova_invert_indent_guides == 0
     call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2)
     call s:HL('IndentGuidesEven', s:vim_bg, s:bg1)
   else
@@ -749,23 +749,23 @@ let g:niji_light_colours = g:rbpt_colorpairs
 "}}}
 " GitGutter: {{{
 
-hi! link GitGutterAdd gruvboxNeutralGreenSign
-hi! link GitGutterChange gruvboxNeutralAquaSign
-hi! link GitGutterDelete gruvboxNeutralRedSign
-hi! link GitGutterChangeDelete gruvboxNeutralAquaSign
+hi! link GitGutterAdd superNovaGreenSign
+hi! link GitGutterChange superNovaAquaSign
+hi! link GitGutterDelete superNovaRedSign
+hi! link GitGutterChangeDelete superNovaAquaSign
 
 " }}}
 " GitCommit: "{{{
 
-hi! link gitcommitSelectedFile gruvboxNeutralGreen
-hi! link gitcommitDiscardedFile gruvboxNeutralRed
+hi! link gitcommitSelectedFile superNovaGreen
+hi! link gitcommitDiscardedFile superNovaRed
 
 " }}}
 " Signify: {{{
 
-hi! link SignifySignAdd gruvboxNeutralGreenSign
-hi! link SignifySignChange gruvboxNeutralAquaSign
-hi! link SignifySignDelete gruvboxNeutralRedSign
+hi! link SignifySignAdd superNovaGreenSign
+hi! link SignifySignChange superNovaAquaSign
+hi! link SignifySignDelete superNovaRedSign
 
 " }}}
 " Syntastic: {{{
@@ -773,30 +773,30 @@ hi! link SignifySignDelete gruvboxNeutralRedSign
 call s:HL('SyntasticError', s:none, s:none, s:undercurl, s:red)
 call s:HL('SyntasticWarning', s:none, s:none, s:undercurl, s:yellow)
 
-hi! link SyntasticErrorSign gruvboxNeutralRedSign
-hi! link SyntasticWarningSign gruvboxNeutralYellowSign
+hi! link SyntasticErrorSign superNovaRedSign
+hi! link SyntasticWarningSign superNovaYellowSign
 
 " }}}
 " Signature: {{{
-hi! link SignatureMarkText   gruvboxNeutralBlueSign
-hi! link SignatureMarkerText gruvboxNeutralPurpleSign
+hi! link SignatureMarkText   superNovaBlueSign
+hi! link SignatureMarkerText superNovaPurpleSign
 
 " }}}
 " ShowMarks: {{{
 
-hi! link ShowMarksHLl gruvboxNeutralBlueSign
-hi! link ShowMarksHLu gruvboxNeutralBlueSign
-hi! link ShowMarksHLo gruvboxNeutralBlueSign
-hi! link ShowMarksHLm gruvboxNeutralBlueSign
+hi! link ShowMarksHLl superNovaBlueSign
+hi! link ShowMarksHLu superNovaBlueSign
+hi! link ShowMarksHLo superNovaBlueSign
+hi! link ShowMarksHLm superNovaBlueSign
 
 " }}}
 " CtrlP: {{{
 
-hi! link CtrlPMatch gruvboxNeutralYellow
-hi! link CtrlPNoEntries gruvboxNeutralRed
-hi! link CtrlPPrtBase gruvboxNeutralBg2
-hi! link CtrlPPrtCursor gruvboxNeutralBlue
-hi! link CtrlPLinePre gruvboxNeutralBg2
+hi! link CtrlPMatch superNovaYellow
+hi! link CtrlPNoEntries superNovaRed
+hi! link CtrlPPrtBase superNovaBg2
+hi! link CtrlPPrtCursor superNovaBlue
+hi! link CtrlPLinePre superNovaBg2
 
 call s:HL('CtrlPMode1', s:blue, s:bg2, s:bold)
 call s:HL('CtrlPMode2', s:bg0, s:blue, s:bold)
@@ -805,15 +805,15 @@ call s:HL('CtrlPStats', s:fg4, s:bg2, s:bold)
 " }}}
 " Startify: {{{
 
-hi! link StartifyBracket gruvboxNeutralFg3
-hi! link StartifyFile gruvboxNeutralFg1
-hi! link StartifyNumber gruvboxNeutralBlue
-hi! link StartifyPath gruvboxNeutralGray
-hi! link StartifySlash gruvboxNeutralGray
-hi! link StartifySection gruvboxNeutralYellow
-hi! link StartifySpecial gruvboxNeutralBg2
-hi! link StartifyHeader gruvboxNeutralOrange
-hi! link StartifyFooter gruvboxNeutralBg2
+hi! link StartifyBracket superNovaFg3
+hi! link StartifyFile superNovaFg1
+hi! link StartifyNumber superNovaBlue
+hi! link StartifyPath superNovaGray
+hi! link StartifySlash superNovaGray
+hi! link StartifySection superNovaYellow
+hi! link StartifySpecial superNovaBg2
+hi! link StartifyHeader superNovaOrange
+hi! link StartifyFooter superNovaBg2
 
 " }}}
 " Vimshell: {{{
@@ -840,48 +840,48 @@ call s:HL('ALEError', s:none, s:none, s:undercurl, s:red)
 call s:HL('ALEWarning', s:none, s:none, s:undercurl, s:yellow)
 call s:HL('ALEInfo', s:none, s:none, s:undercurl, s:blue)
 
-hi! link ALEErrorSign gruvboxNeutralRedSign
-hi! link ALEWarningSign gruvboxNeutralYellowSign
-hi! link ALEInfoSign gruvboxNeutralBlueSign
+hi! link ALEErrorSign superNovaRedSign
+hi! link ALEWarningSign superNovaYellowSign
+hi! link ALEInfoSign superNovaBlueSign
 
 " }}}
 " Dirvish: {{{
 
-hi! link DirvishPathTail gruvboxNeutralAqua
-hi! link DirvishArg gruvboxNeutralYellow
+hi! link DirvishPathTail superNovaAqua
+hi! link DirvishArg superNovaYellow
 
 " }}}
 " Netrw: {{{
 
-hi! link netrwDir gruvboxNeutralAqua
-hi! link netrwClassify gruvboxNeutralAqua
-hi! link netrwLink gruvboxNeutralGray
-hi! link netrwSymLink gruvboxNeutralFg1
-hi! link netrwExe gruvboxNeutralYellow
-hi! link netrwComment gruvboxNeutralGray
-hi! link netrwList gruvboxNeutralBlue
-hi! link netrwHelpCmd gruvboxNeutralAqua
-hi! link netrwCmdSep gruvboxNeutralFg3
-hi! link netrwVersion gruvboxNeutralGreen
+hi! link netrwDir superNovaAqua
+hi! link netrwClassify superNovaAqua
+hi! link netrwLink superNovaGray
+hi! link netrwSymLink superNovaFg1
+hi! link netrwExe superNovaYellow
+hi! link netrwComment superNovaGray
+hi! link netrwList superNovaBlue
+hi! link netrwHelpCmd superNovaAqua
+hi! link netrwCmdSep superNovaFg3
+hi! link netrwVersion superNovaGreen
 
 " }}}
 " NERDTree: {{{
 
-hi! link NERDTreeDir gruvboxNeutralAqua
-hi! link NERDTreeDirSlash gruvboxNeutralAqua
+hi! link NERDTreeDir superNovaAqua
+hi! link NERDTreeDirSlash superNovaAqua
 
-hi! link NERDTreeOpenable gruvboxNeutralOrange
-hi! link NERDTreeClosable gruvboxNeutralOrange
+hi! link NERDTreeOpenable superNovaOrange
+hi! link NERDTreeClosable superNovaOrange
 
-hi! link NERDTreeFile gruvboxNeutralFg1
-hi! link NERDTreeExecFile gruvboxNeutralYellow
+hi! link NERDTreeFile superNovaFg1
+hi! link NERDTreeExecFile superNovaYellow
 
-hi! link NERDTreeUp gruvboxNeutralGray
-hi! link NERDTreeCWD gruvboxNeutralGreen
-hi! link NERDTreeHelp gruvboxNeutralFg1
+hi! link NERDTreeUp superNovaGray
+hi! link NERDTreeCWD superNovaGreen
+hi! link NERDTreeHelp superNovaFg1
 
-hi! link NERDTreeToggleOn gruvboxNeutralGreen
-hi! link NERDTreeToggleOff gruvboxNeutralRed
+hi! link NERDTreeToggleOn superNovaGreen
+hi! link NERDTreeToggleOff superNovaRed
 
 " }}}
 " Vim Multiple Cursors: {{{
@@ -892,21 +892,21 @@ call s:HL('multiple_cursors_visual', s:none, s:bg2)
 " }}}
 " coc.nvim: {{{
 
-hi! link CocErrorSign gruvboxNeutralRedSign
-hi! link CocWarningSign gruvboxNeutralOrangeSign
-hi! link CocInfoSign gruvboxNeutralYellowSign
-hi! link CocHintSign gruvboxNeutralBlueSign
-hi! link CocErrorFloat gruvboxNeutralRed
-hi! link CocWarningFloat gruvboxNeutralOrange
-hi! link CocInfoFloat gruvboxNeutralYellow
-hi! link CocHintFloat gruvboxNeutralBlue
-hi! link CocDiagnosticsError gruvboxNeutralRed
-hi! link CocDiagnosticsWarning gruvboxNeutralOrange
-hi! link CocDiagnosticsInfo gruvboxNeutralYellow
-hi! link CocDiagnosticsHint gruvboxNeutralBlue
+hi! link CocErrorSign superNovaRedSign
+hi! link CocWarningSign superNovaOrangeSign
+hi! link CocInfoSign superNovaYellowSign
+hi! link CocHintSign superNovaBlueSign
+hi! link CocErrorFloat superNovaRed
+hi! link CocWarningFloat superNovaOrange
+hi! link CocInfoFloat superNovaYellow
+hi! link CocHintFloat superNovaBlue
+hi! link CocDiagnosticsError superNovaRed
+hi! link CocDiagnosticsWarning superNovaOrange
+hi! link CocDiagnosticsInfo superNovaYellow
+hi! link CocDiagnosticsHint superNovaBlue
 
-hi! link CocSelectedText gruvboxNeutralRed
-hi! link CocCodeLens gruvboxNeutralGray
+hi! link CocSelectedText superNovaRed
+hi! link CocCodeLens superNovaGray
 
 call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
 call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:orange)
@@ -918,31 +918,31 @@ call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
 
-hi! link diffAdded gruvboxNeutralGreen
-hi! link diffRemoved gruvboxNeutralRed
-hi! link diffChanged gruvboxNeutralAqua
+hi! link diffAdded superNovaGreen
+hi! link diffRemoved superNovaRed
+hi! link diffChanged superNovaAqua
 
-hi! link diffFile gruvboxNeutralOrange
-hi! link diffNewFile gruvboxNeutralYellow
+hi! link diffFile superNovaOrange
+hi! link diffNewFile superNovaYellow
 
-hi! link diffLine gruvboxNeutralBlue
+hi! link diffLine superNovaBlue
 
 " }}}
 " Html: {{{
 
-hi! link htmlTag gruvboxNeutralBlue
-hi! link htmlEndTag gruvboxNeutralBlue
+hi! link htmlTag superNovaBlue
+hi! link htmlEndTag superNovaBlue
 
-hi! link htmlTagName gruvboxNeutralAquaBold
-hi! link htmlArg gruvboxNeutralAqua
+hi! link htmlTagName superNovaAquaBold
+hi! link htmlArg superNovaAqua
 
-hi! link htmlScriptTag gruvboxNeutralPurple
-hi! link htmlTagN gruvboxNeutralFg1
-hi! link htmlSpecialTagName gruvboxNeutralAquaBold
+hi! link htmlScriptTag superNovaPurple
+hi! link htmlTagN superNovaFg1
+hi! link htmlSpecialTagName superNovaAquaBold
 
 call s:HL('htmlLink', s:fg4, s:none, s:underline)
 
-hi! link htmlSpecialChar gruvboxNeutralOrange
+hi! link htmlSpecialChar superNovaOrange
 
 call s:HL('htmlBold', s:vim_fg, s:vim_bg, s:bold)
 call s:HL('htmlBoldUnderline', s:vim_fg, s:vim_bg, s:bold . s:underline)
@@ -956,403 +956,403 @@ call s:HL('htmlItalic', s:vim_fg, s:vim_bg, s:italic)
 " }}}
 " Xml: {{{
 
-hi! link xmlTag gruvboxNeutralBlue
-hi! link xmlEndTag gruvboxNeutralBlue
-hi! link xmlTagName gruvboxNeutralBlue
-hi! link xmlEqual gruvboxNeutralBlue
-hi! link docbkKeyword gruvboxNeutralAquaBold
+hi! link xmlTag superNovaBlue
+hi! link xmlEndTag superNovaBlue
+hi! link xmlTagName superNovaBlue
+hi! link xmlEqual superNovaBlue
+hi! link docbkKeyword superNovaAquaBold
 
-hi! link xmlDocTypeDecl gruvboxNeutralGray
-hi! link xmlDocTypeKeyword gruvboxNeutralPurple
-hi! link xmlCdataStart gruvboxNeutralGray
-hi! link xmlCdataCdata gruvboxNeutralPurple
-hi! link dtdFunction gruvboxNeutralGray
-hi! link dtdTagName gruvboxNeutralPurple
+hi! link xmlDocTypeDecl superNovaGray
+hi! link xmlDocTypeKeyword superNovaPurple
+hi! link xmlCdataStart superNovaGray
+hi! link xmlCdataCdata superNovaPurple
+hi! link dtdFunction superNovaGray
+hi! link dtdTagName superNovaPurple
 
-hi! link xmlAttrib gruvboxNeutralAqua
-hi! link xmlProcessingDelim gruvboxNeutralGray
-hi! link dtdParamEntityPunct gruvboxNeutralGray
-hi! link dtdParamEntityDPunct gruvboxNeutralGray
-hi! link xmlAttribPunct gruvboxNeutralGray
+hi! link xmlAttrib superNovaAqua
+hi! link xmlProcessingDelim superNovaGray
+hi! link dtdParamEntityPunct superNovaGray
+hi! link dtdParamEntityDPunct superNovaGray
+hi! link xmlAttribPunct superNovaGray
 
-hi! link xmlEntity gruvboxNeutralOrange
-hi! link xmlEntityPunct gruvboxNeutralOrange
+hi! link xmlEntity superNovaOrange
+hi! link xmlEntityPunct superNovaOrange
 " }}}
 " Vim: {{{
 
 call s:HL('vimCommentTitle', s:fg4_256, s:none, s:bold . s:italicize_comments)
 
-hi! link vimNotation gruvboxNeutralOrange
-hi! link vimBracket gruvboxNeutralOrange
-hi! link vimMapModKey gruvboxNeutralOrange
-hi! link vimFuncSID gruvboxNeutralFg3
-hi! link vimSetSep gruvboxNeutralFg3
-hi! link vimSep gruvboxNeutralFg3
-hi! link vimContinue gruvboxNeutralFg3
+hi! link vimNotation superNovaOrange
+hi! link vimBracket superNovaOrange
+hi! link vimMapModKey superNovaOrange
+hi! link vimFuncSID superNovaFg3
+hi! link vimSetSep superNovaFg3
+hi! link vimSep superNovaFg3
+hi! link vimContinue superNovaFg3
 
 " }}}
 " Clojure: {{{
 
-hi! link clojureKeyword gruvboxNeutralBlue
-hi! link clojureCond gruvboxNeutralOrange
-hi! link clojureSpecial gruvboxNeutralOrange
-hi! link clojureDefine gruvboxNeutralOrange
+hi! link clojureKeyword superNovaBlue
+hi! link clojureCond superNovaOrange
+hi! link clojureSpecial superNovaOrange
+hi! link clojureDefine superNovaOrange
 
-hi! link clojureFunc gruvboxNeutralYellow
-hi! link clojureRepeat gruvboxNeutralYellow
-hi! link clojureCharacter gruvboxNeutralAqua
-hi! link clojureStringEscape gruvboxNeutralAqua
-hi! link clojureException gruvboxNeutralRed
+hi! link clojureFunc superNovaYellow
+hi! link clojureRepeat superNovaYellow
+hi! link clojureCharacter superNovaAqua
+hi! link clojureStringEscape superNovaAqua
+hi! link clojureException superNovaRed
 
-hi! link clojureRegexp gruvboxNeutralAqua
-hi! link clojureRegexpEscape gruvboxNeutralAqua
+hi! link clojureRegexp superNovaAqua
+hi! link clojureRegexpEscape superNovaAqua
 call s:HL('clojureRegexpCharClass', s:fg3, s:none, s:bold)
 hi! link clojureRegexpMod clojureRegexpCharClass
 hi! link clojureRegexpQuantifier clojureRegexpCharClass
 
-hi! link clojureParen gruvboxNeutralFg3
-hi! link clojureAnonArg gruvboxNeutralYellow
-hi! link clojureVariable gruvboxNeutralBlue
-hi! link clojureMacro gruvboxNeutralOrange
+hi! link clojureParen superNovaFg3
+hi! link clojureAnonArg superNovaYellow
+hi! link clojureVariable superNovaBlue
+hi! link clojureMacro superNovaOrange
 
-hi! link clojureMeta gruvboxNeutralYellow
-hi! link clojureDeref gruvboxNeutralYellow
-hi! link clojureQuote gruvboxNeutralYellow
-hi! link clojureUnquote gruvboxNeutralYellow
+hi! link clojureMeta superNovaYellow
+hi! link clojureDeref superNovaYellow
+hi! link clojureQuote superNovaYellow
+hi! link clojureUnquote superNovaYellow
 
 " }}}
 " C: {{{
 
-hi! link cOperator gruvboxNeutralPurple
-hi! link cStructure gruvboxNeutralOrange
+hi! link cOperator superNovaPurple
+hi! link cStructure superNovaOrange
 
 " }}}
 " Python: {{{
 
-hi! link pythonBuiltin gruvboxNeutralOrange
-hi! link pythonBuiltinObj gruvboxNeutralOrange
-hi! link pythonBuiltinFunc gruvboxNeutralOrange
-hi! link pythonFunction gruvboxNeutralAqua
-hi! link pythonDecorator gruvboxNeutralRed
-hi! link pythonInclude gruvboxNeutralBlue
-hi! link pythonImport gruvboxNeutralBlue
-hi! link pythonRun gruvboxNeutralBlue
-hi! link pythonCoding gruvboxNeutralBlue
-hi! link pythonOperator gruvboxNeutralRed
-hi! link pythonException gruvboxNeutralRed
-hi! link pythonExceptions gruvboxNeutralPurple
-hi! link pythonBoolean gruvboxNeutralPurple
-hi! link pythonDot gruvboxNeutralFg3
-hi! link pythonConditional gruvboxNeutralRed
-hi! link pythonRepeat gruvboxNeutralRed
-hi! link pythonDottedName gruvboxNeutralGreenBold
+hi! link pythonBuiltin superNovaOrange
+hi! link pythonBuiltinObj superNovaOrange
+hi! link pythonBuiltinFunc superNovaOrange
+hi! link pythonFunction superNovaAqua
+hi! link pythonDecorator superNovaRed
+hi! link pythonInclude superNovaBlue
+hi! link pythonImport superNovaBlue
+hi! link pythonRun superNovaBlue
+hi! link pythonCoding superNovaBlue
+hi! link pythonOperator superNovaRed
+hi! link pythonException superNovaRed
+hi! link pythonExceptions superNovaPurple
+hi! link pythonBoolean superNovaPurple
+hi! link pythonDot superNovaFg3
+hi! link pythonConditional superNovaRed
+hi! link pythonRepeat superNovaRed
+hi! link pythonDottedName superNovaGreenBold
 
 " }}}
 " CSS: {{{
 
-hi! link cssBraces gruvboxNeutralBlue
-hi! link cssFunctionName gruvboxNeutralYellow
-hi! link cssIdentifier gruvboxNeutralOrange
-hi! link cssClassName gruvboxNeutralGreen
-hi! link cssColor gruvboxNeutralBlue
-hi! link cssSelectorOp gruvboxNeutralBlue
-hi! link cssSelectorOp2 gruvboxNeutralBlue
-hi! link cssImportant gruvboxNeutralGreen
-hi! link cssVendor gruvboxNeutralFg1
+hi! link cssBraces superNovaBlue
+hi! link cssFunctionName superNovaYellow
+hi! link cssIdentifier superNovaOrange
+hi! link cssClassName superNovaGreen
+hi! link cssColor superNovaBlue
+hi! link cssSelectorOp superNovaBlue
+hi! link cssSelectorOp2 superNovaBlue
+hi! link cssImportant superNovaGreen
+hi! link cssVendor superNovaFg1
 
-hi! link cssTextProp gruvboxNeutralAqua
-hi! link cssAnimationProp gruvboxNeutralAqua
-hi! link cssUIProp gruvboxNeutralYellow
-hi! link cssTransformProp gruvboxNeutralAqua
-hi! link cssTransitionProp gruvboxNeutralAqua
-hi! link cssPrintProp gruvboxNeutralAqua
-hi! link cssPositioningProp gruvboxNeutralYellow
-hi! link cssBoxProp gruvboxNeutralAqua
-hi! link cssFontDescriptorProp gruvboxNeutralAqua
-hi! link cssFlexibleBoxProp gruvboxNeutralAqua
-hi! link cssBorderOutlineProp gruvboxNeutralAqua
-hi! link cssBackgroundProp gruvboxNeutralAqua
-hi! link cssMarginProp gruvboxNeutralAqua
-hi! link cssListProp gruvboxNeutralAqua
-hi! link cssTableProp gruvboxNeutralAqua
-hi! link cssFontProp gruvboxNeutralAqua
-hi! link cssPaddingProp gruvboxNeutralAqua
-hi! link cssDimensionProp gruvboxNeutralAqua
-hi! link cssRenderProp gruvboxNeutralAqua
-hi! link cssColorProp gruvboxNeutralAqua
-hi! link cssGeneratedContentProp gruvboxNeutralAqua
+hi! link cssTextProp superNovaAqua
+hi! link cssAnimationProp superNovaAqua
+hi! link cssUIProp superNovaYellow
+hi! link cssTransformProp superNovaAqua
+hi! link cssTransitionProp superNovaAqua
+hi! link cssPrintProp superNovaAqua
+hi! link cssPositioningProp superNovaYellow
+hi! link cssBoxProp superNovaAqua
+hi! link cssFontDescriptorProp superNovaAqua
+hi! link cssFlexibleBoxProp superNovaAqua
+hi! link cssBorderOutlineProp superNovaAqua
+hi! link cssBackgroundProp superNovaAqua
+hi! link cssMarginProp superNovaAqua
+hi! link cssListProp superNovaAqua
+hi! link cssTableProp superNovaAqua
+hi! link cssFontProp superNovaAqua
+hi! link cssPaddingProp superNovaAqua
+hi! link cssDimensionProp superNovaAqua
+hi! link cssRenderProp superNovaAqua
+hi! link cssColorProp superNovaAqua
+hi! link cssGeneratedContentProp superNovaAqua
 
 " }}}
 " JavaScript: {{{
 
-hi! link javaScriptBraces gruvboxNeutralFg1
-hi! link javaScriptFunction gruvboxNeutralAqua
-hi! link javaScriptIdentifier gruvboxNeutralRed
-hi! link javaScriptMember gruvboxNeutralBlue
-hi! link javaScriptNumber gruvboxNeutralPurple
-hi! link javaScriptNull gruvboxNeutralPurple
-hi! link javaScriptParens gruvboxNeutralFg3
+hi! link javaScriptBraces superNovaFg1
+hi! link javaScriptFunction superNovaAqua
+hi! link javaScriptIdentifier superNovaRed
+hi! link javaScriptMember superNovaBlue
+hi! link javaScriptNumber superNovaPurple
+hi! link javaScriptNull superNovaPurple
+hi! link javaScriptParens superNovaFg3
 
 " }}}
 " YAJS: {{{
 
-hi! link javascriptImport gruvboxNeutralAqua
-hi! link javascriptExport gruvboxNeutralAqua
-hi! link javascriptClassKeyword gruvboxNeutralAqua
-hi! link javascriptClassExtends gruvboxNeutralAqua
-hi! link javascriptDefault gruvboxNeutralAqua
+hi! link javascriptImport superNovaAqua
+hi! link javascriptExport superNovaAqua
+hi! link javascriptClassKeyword superNovaAqua
+hi! link javascriptClassExtends superNovaAqua
+hi! link javascriptDefault superNovaAqua
 
-hi! link javascriptClassName gruvboxNeutralYellow
-hi! link javascriptClassSuperName gruvboxNeutralYellow
-hi! link javascriptGlobal gruvboxNeutralYellow
+hi! link javascriptClassName superNovaYellow
+hi! link javascriptClassSuperName superNovaYellow
+hi! link javascriptGlobal superNovaYellow
 
-hi! link javascriptEndColons gruvboxNeutralFg1
-hi! link javascriptFuncArg gruvboxNeutralFg1
-hi! link javascriptGlobalMethod gruvboxNeutralFg1
-hi! link javascriptNodeGlobal gruvboxNeutralFg1
-hi! link javascriptBOMWindowProp gruvboxNeutralFg1
-hi! link javascriptArrayMethod gruvboxNeutralFg1
-hi! link javascriptArrayStaticMethod gruvboxNeutralFg1
-hi! link javascriptCacheMethod gruvboxNeutralFg1
-hi! link javascriptDateMethod gruvboxNeutralFg1
-hi! link javascriptMathStaticMethod gruvboxNeutralFg1
+hi! link javascriptEndColons superNovaFg1
+hi! link javascriptFuncArg superNovaFg1
+hi! link javascriptGlobalMethod superNovaFg1
+hi! link javascriptNodeGlobal superNovaFg1
+hi! link javascriptBOMWindowProp superNovaFg1
+hi! link javascriptArrayMethod superNovaFg1
+hi! link javascriptArrayStaticMethod superNovaFg1
+hi! link javascriptCacheMethod superNovaFg1
+hi! link javascriptDateMethod superNovaFg1
+hi! link javascriptMathStaticMethod superNovaFg1
 
-" hi! link javascriptProp gruvboxNeutralFg1
-hi! link javascriptURLUtilsProp gruvboxNeutralFg1
-hi! link javascriptBOMNavigatorProp gruvboxNeutralFg1
-hi! link javascriptDOMDocMethod gruvboxNeutralFg1
-hi! link javascriptDOMDocProp gruvboxNeutralFg1
-hi! link javascriptBOMLocationMethod gruvboxNeutralFg1
-hi! link javascriptBOMWindowMethod gruvboxNeutralFg1
-hi! link javascriptStringMethod gruvboxNeutralFg1
+" hi! link javascriptProp superNovaFg1
+hi! link javascriptURLUtilsProp superNovaFg1
+hi! link javascriptBOMNavigatorProp superNovaFg1
+hi! link javascriptDOMDocMethod superNovaFg1
+hi! link javascriptDOMDocProp superNovaFg1
+hi! link javascriptBOMLocationMethod superNovaFg1
+hi! link javascriptBOMWindowMethod superNovaFg1
+hi! link javascriptStringMethod superNovaFg1
 
-hi! link javascriptVariable gruvboxNeutralOrange
-" hi! link javascriptVariable gruvboxNeutralRed
-" hi! link javascriptIdentifier gruvboxNeutralOrange
-" hi! link javascriptClassSuper gruvboxNeutralOrange
-hi! link javascriptIdentifier gruvboxNeutralOrange
-hi! link javascriptClassSuper gruvboxNeutralOrange
+hi! link javascriptVariable superNovaOrange
+" hi! link javascriptVariable superNovaRed
+" hi! link javascriptIdentifier superNovaOrange
+" hi! link javascriptClassSuper superNovaOrange
+hi! link javascriptIdentifier superNovaOrange
+hi! link javascriptClassSuper superNovaOrange
 
-" hi! link javascriptFuncKeyword gruvboxNeutralOrange
-" hi! link javascriptAsyncFunc gruvboxNeutralOrange
-hi! link javascriptFuncKeyword gruvboxNeutralAqua
-hi! link javascriptAsyncFunc gruvboxNeutralAqua
-hi! link javascriptClassStatic gruvboxNeutralOrange
+" hi! link javascriptFuncKeyword superNovaOrange
+" hi! link javascriptAsyncFunc superNovaOrange
+hi! link javascriptFuncKeyword superNovaAqua
+hi! link javascriptAsyncFunc superNovaAqua
+hi! link javascriptClassStatic superNovaOrange
 
-hi! link javascriptOperator gruvboxNeutralRed
-hi! link javascriptForOperator gruvboxNeutralRed
-hi! link javascriptYield gruvboxNeutralRed
-hi! link javascriptExceptions gruvboxNeutralRed
-hi! link javascriptMessage gruvboxNeutralRed
+hi! link javascriptOperator superNovaRed
+hi! link javascriptForOperator superNovaRed
+hi! link javascriptYield superNovaRed
+hi! link javascriptExceptions superNovaRed
+hi! link javascriptMessage superNovaRed
 
-hi! link javascriptTemplateSB gruvboxNeutralAqua
-hi! link javascriptTemplateSubstitution gruvboxNeutralFg1
+hi! link javascriptTemplateSB superNovaAqua
+hi! link javascriptTemplateSubstitution superNovaFg1
 
-" hi! link javascriptLabel gruvboxNeutralBlue
-" hi! link javascriptObjectLabel gruvboxNeutralBlue
-" hi! link javascriptPropertyName gruvboxNeutralBlue
-hi! link javascriptLabel gruvboxNeutralFg1
-hi! link javascriptObjectLabel gruvboxNeutralFg1
-hi! link javascriptPropertyName gruvboxNeutralFg1
+" hi! link javascriptLabel superNovaBlue
+" hi! link javascriptObjectLabel superNovaBlue
+" hi! link javascriptPropertyName superNovaBlue
+hi! link javascriptLabel superNovaFg1
+hi! link javascriptObjectLabel superNovaFg1
+hi! link javascriptPropertyName superNovaFg1
 
-hi! link javascriptLogicSymbols gruvboxNeutralFg1
-hi! link javascriptArrowFunc gruvboxNeutralYellow
+hi! link javascriptLogicSymbols superNovaFg1
+hi! link javascriptArrowFunc superNovaYellow
 
-hi! link javascriptDocParamName gruvboxNeutralFg4
-hi! link javascriptDocTags gruvboxNeutralFg4
-hi! link javascriptDocNotation gruvboxNeutralFg4
-hi! link javascriptDocParamType gruvboxNeutralFg4
-hi! link javascriptDocNamedParamType gruvboxNeutralFg4
+hi! link javascriptDocParamName superNovaFg4
+hi! link javascriptDocTags superNovaFg4
+hi! link javascriptDocNotation superNovaFg4
+hi! link javascriptDocParamType superNovaFg4
+hi! link javascriptDocNamedParamType superNovaFg4
 
-hi! link javascriptBrackets gruvboxNeutralFg1
-hi! link javascriptDOMElemAttrs gruvboxNeutralFg1
-hi! link javascriptDOMEventMethod gruvboxNeutralFg1
-hi! link javascriptDOMNodeMethod gruvboxNeutralFg1
-hi! link javascriptDOMStorageMethod gruvboxNeutralFg1
-hi! link javascriptHeadersMethod gruvboxNeutralFg1
+hi! link javascriptBrackets superNovaFg1
+hi! link javascriptDOMElemAttrs superNovaFg1
+hi! link javascriptDOMEventMethod superNovaFg1
+hi! link javascriptDOMNodeMethod superNovaFg1
+hi! link javascriptDOMStorageMethod superNovaFg1
+hi! link javascriptHeadersMethod superNovaFg1
 
-hi! link javascriptAsyncFuncKeyword gruvboxNeutralRed
-hi! link javascriptAwaitFuncKeyword gruvboxNeutralRed
+hi! link javascriptAsyncFuncKeyword superNovaRed
+hi! link javascriptAwaitFuncKeyword superNovaRed
 
 " }}}
 " PanglossJS: {{{
 
-hi! link jsClassKeyword gruvboxNeutralAqua
-hi! link jsExtendsKeyword gruvboxNeutralAqua
-hi! link jsExportDefault gruvboxNeutralAqua
-hi! link jsTemplateBraces gruvboxNeutralAqua
-hi! link jsGlobalNodeObjects gruvboxNeutralFg1
-hi! link jsGlobalObjects gruvboxNeutralFg1
-hi! link jsFunction gruvboxNeutralAqua
-hi! link jsFuncParens gruvboxNeutralFg3
-hi! link jsParens gruvboxNeutralFg3
-hi! link jsNull gruvboxNeutralPurple
-hi! link jsUndefined gruvboxNeutralPurple
-hi! link jsClassDefinition gruvboxNeutralYellow
+hi! link jsClassKeyword superNovaAqua
+hi! link jsExtendsKeyword superNovaAqua
+hi! link jsExportDefault superNovaAqua
+hi! link jsTemplateBraces superNovaAqua
+hi! link jsGlobalNodeObjects superNovaFg1
+hi! link jsGlobalObjects superNovaFg1
+hi! link jsFunction superNovaAqua
+hi! link jsFuncParens superNovaFg3
+hi! link jsParens superNovaFg3
+hi! link jsNull superNovaPurple
+hi! link jsUndefined superNovaPurple
+hi! link jsClassDefinition superNovaYellow
 
 " }}}
 " TypeScript: {{{
 
-hi! link typeScriptReserved gruvboxNeutralAqua
-hi! link typeScriptLabel gruvboxNeutralAqua
-hi! link typeScriptFuncKeyword gruvboxNeutralAqua
-hi! link typeScriptIdentifier gruvboxNeutralOrange
-hi! link typeScriptBraces gruvboxNeutralFg1
-hi! link typeScriptEndColons gruvboxNeutralFg1
-hi! link typeScriptDOMObjects gruvboxNeutralFg1
-hi! link typeScriptAjaxMethods gruvboxNeutralFg1
-hi! link typeScriptLogicSymbols gruvboxNeutralFg1
+hi! link typeScriptReserved superNovaAqua
+hi! link typeScriptLabel superNovaAqua
+hi! link typeScriptFuncKeyword superNovaAqua
+hi! link typeScriptIdentifier superNovaOrange
+hi! link typeScriptBraces superNovaFg1
+hi! link typeScriptEndColons superNovaFg1
+hi! link typeScriptDOMObjects superNovaFg1
+hi! link typeScriptAjaxMethods superNovaFg1
+hi! link typeScriptLogicSymbols superNovaFg1
 hi! link typeScriptDocSeeTag Comment
 hi! link typeScriptDocParam Comment
 hi! link typeScriptDocTags vimCommentTitle
-hi! link typeScriptGlobalObjects gruvboxNeutralFg1
-hi! link typeScriptParens gruvboxNeutralFg3
-hi! link typeScriptOpSymbols gruvboxNeutralFg3
-hi! link typeScriptHtmlElemProperties gruvboxNeutralFg1
-hi! link typeScriptNull gruvboxNeutralPurple
-hi! link typeScriptInterpolationDelimiter gruvboxNeutralAqua
+hi! link typeScriptGlobalObjects superNovaFg1
+hi! link typeScriptParens superNovaFg3
+hi! link typeScriptOpSymbols superNovaFg3
+hi! link typeScriptHtmlElemProperties superNovaFg1
+hi! link typeScriptNull superNovaPurple
+hi! link typeScriptInterpolationDelimiter superNovaAqua
 
 " }}}
 " PureScript: {{{
 
-hi! link purescriptModuleKeyword gruvboxNeutralAqua
-hi! link purescriptModuleName gruvboxNeutralFg1
-hi! link purescriptWhere gruvboxNeutralAqua
-hi! link purescriptDelimiter gruvboxNeutralFg4
-hi! link purescriptType gruvboxNeutralFg1
-hi! link purescriptImportKeyword gruvboxNeutralAqua
-hi! link purescriptHidingKeyword gruvboxNeutralAqua
-hi! link purescriptAsKeyword gruvboxNeutralAqua
-hi! link purescriptStructure gruvboxNeutralAqua
-hi! link purescriptOperator gruvboxNeutralBlue
+hi! link purescriptModuleKeyword superNovaAqua
+hi! link purescriptModuleName superNovaFg1
+hi! link purescriptWhere superNovaAqua
+hi! link purescriptDelimiter superNovaFg4
+hi! link purescriptType superNovaFg1
+hi! link purescriptImportKeyword superNovaAqua
+hi! link purescriptHidingKeyword superNovaAqua
+hi! link purescriptAsKeyword superNovaAqua
+hi! link purescriptStructure superNovaAqua
+hi! link purescriptOperator superNovaBlue
 
-hi! link purescriptTypeVar gruvboxNeutralFg1
-hi! link purescriptConstructor gruvboxNeutralFg1
-hi! link purescriptFunction gruvboxNeutralFg1
-hi! link purescriptConditional gruvboxNeutralOrange
-hi! link purescriptBacktick gruvboxNeutralOrange
+hi! link purescriptTypeVar superNovaFg1
+hi! link purescriptConstructor superNovaFg1
+hi! link purescriptFunction superNovaFg1
+hi! link purescriptConditional superNovaOrange
+hi! link purescriptBacktick superNovaOrange
 
 " }}}
 " CoffeeScript: {{{
 
-hi! link coffeeExtendedOp gruvboxNeutralFg3
-hi! link coffeeSpecialOp gruvboxNeutralFg3
-hi! link coffeeCurly gruvboxNeutralOrange
-hi! link coffeeParen gruvboxNeutralFg3
-hi! link coffeeBracket gruvboxNeutralOrange
+hi! link coffeeExtendedOp superNovaFg3
+hi! link coffeeSpecialOp superNovaFg3
+hi! link coffeeCurly superNovaOrange
+hi! link coffeeParen superNovaFg3
+hi! link coffeeBracket superNovaOrange
 
 " }}}
 " Ruby: {{{
 
-hi! link rubyStringDelimiter gruvboxNeutralGreen
-hi! link rubyInterpolationDelimiter gruvboxNeutralAqua
+hi! link rubyStringDelimiter superNovaGreen
+hi! link rubyInterpolationDelimiter superNovaAqua
 
 " }}}
 " ObjectiveC: {{{
 
-hi! link objcTypeModifier gruvboxNeutralRed
-hi! link objcDirective gruvboxNeutralBlue
+hi! link objcTypeModifier superNovaRed
+hi! link objcDirective superNovaBlue
 
 " }}}
 " Go: {{{
 
-hi! link goDirective gruvboxNeutralAqua
-hi! link goConstants gruvboxNeutralPurple
-hi! link goDeclaration gruvboxNeutralRed
-hi! link goDeclType gruvboxNeutralBlue
-hi! link goBuiltins gruvboxNeutralOrange
+hi! link goDirective superNovaAqua
+hi! link goConstants superNovaPurple
+hi! link goDeclaration superNovaRed
+hi! link goDeclType superNovaBlue
+hi! link goBuiltins superNovaOrange
 
 " }}}
 " Lua: {{{
 
-hi! link luaIn gruvboxNeutralRed
-hi! link luaFunction gruvboxNeutralAqua
-hi! link luaTable gruvboxNeutralOrange
+hi! link luaIn superNovaRed
+hi! link luaFunction superNovaAqua
+hi! link luaTable superNovaOrange
 
 " }}}
 " MoonScript: {{{
 
-hi! link moonSpecialOp gruvboxNeutralFg3
-hi! link moonExtendedOp gruvboxNeutralFg3
-hi! link moonFunction gruvboxNeutralFg3
-hi! link moonObject gruvboxNeutralYellow
+hi! link moonSpecialOp superNovaFg3
+hi! link moonExtendedOp superNovaFg3
+hi! link moonFunction superNovaFg3
+hi! link moonObject superNovaYellow
 
 " }}}
 " Java: {{{
 
-hi! link javaAnnotation gruvboxNeutralBlue
-hi! link javaDocTags gruvboxNeutralAqua
+hi! link javaAnnotation superNovaBlue
+hi! link javaDocTags superNovaAqua
 hi! link javaCommentTitle vimCommentTitle
-hi! link javaParen gruvboxNeutralFg3
-hi! link javaParen1 gruvboxNeutralFg3
-hi! link javaParen2 gruvboxNeutralFg3
-hi! link javaParen3 gruvboxNeutralFg3
-hi! link javaParen4 gruvboxNeutralFg3
-hi! link javaParen5 gruvboxNeutralFg3
-hi! link javaOperator gruvboxNeutralOrange
+hi! link javaParen superNovaFg3
+hi! link javaParen1 superNovaFg3
+hi! link javaParen2 superNovaFg3
+hi! link javaParen3 superNovaFg3
+hi! link javaParen4 superNovaFg3
+hi! link javaParen5 superNovaFg3
+hi! link javaOperator superNovaOrange
 
-hi! link javaVarArg gruvboxNeutralGreen
+hi! link javaVarArg superNovaGreen
 
 " }}}
 " Elixir: {{{
 
 hi! link elixirDocString Comment
 
-hi! link elixirStringDelimiter gruvboxNeutralGreen
-hi! link elixirInterpolationDelimiter gruvboxNeutralAqua
+hi! link elixirStringDelimiter superNovaGreen
+hi! link elixirInterpolationDelimiter superNovaAqua
 
-hi! link elixirModuleDeclaration gruvboxNeutralYellow
+hi! link elixirModuleDeclaration superNovaYellow
 
 " }}}
 " Scala: {{{
 
 " NB: scala vim syntax file is kinda horrible
-hi! link scalaNameDefinition gruvboxNeutralFg1
-hi! link scalaCaseFollowing gruvboxNeutralFg1
-hi! link scalaCapitalWord gruvboxNeutralFg1
-hi! link scalaTypeExtension gruvboxNeutralFg1
+hi! link scalaNameDefinition superNovaFg1
+hi! link scalaCaseFollowing superNovaFg1
+hi! link scalaCapitalWord superNovaFg1
+hi! link scalaTypeExtension superNovaFg1
 
-hi! link scalaKeyword gruvboxNeutralRed
-hi! link scalaKeywordModifier gruvboxNeutralRed
+hi! link scalaKeyword superNovaRed
+hi! link scalaKeywordModifier superNovaRed
 
-hi! link scalaSpecial gruvboxNeutralAqua
-hi! link scalaOperator gruvboxNeutralFg1
+hi! link scalaSpecial superNovaAqua
+hi! link scalaOperator superNovaFg1
 
-hi! link scalaTypeDeclaration gruvboxNeutralYellow
-hi! link scalaTypeTypePostDeclaration gruvboxNeutralYellow
+hi! link scalaTypeDeclaration superNovaYellow
+hi! link scalaTypeTypePostDeclaration superNovaYellow
 
-hi! link scalaInstanceDeclaration gruvboxNeutralFg1
-hi! link scalaInterpolation gruvboxNeutralAqua
+hi! link scalaInstanceDeclaration superNovaFg1
+hi! link scalaInterpolation superNovaAqua
 
 " }}}
 " Markdown: {{{
 
 call s:HL('markdownItalic', s:fg3, s:none, s:italic)
 
-hi! link markdownH1 gruvboxNeutralGreenBold
-hi! link markdownH2 gruvboxNeutralGreenBold
-hi! link markdownH3 gruvboxNeutralYellowBold
-hi! link markdownH4 gruvboxNeutralYellowBold
-hi! link markdownH5 gruvboxNeutralYellow
-hi! link markdownH6 gruvboxNeutralYellow
+hi! link markdownH1 superNovaGreenBold
+hi! link markdownH2 superNovaGreenBold
+hi! link markdownH3 superNovaYellowBold
+hi! link markdownH4 superNovaYellowBold
+hi! link markdownH5 superNovaYellow
+hi! link markdownH6 superNovaYellow
 
-hi! link markdownCode gruvboxNeutralAqua
-hi! link markdownCodeBlock gruvboxNeutralAqua
-hi! link markdownCodeDelimiter gruvboxNeutralAqua
+hi! link markdownCode superNovaAqua
+hi! link markdownCodeBlock superNovaAqua
+hi! link markdownCodeDelimiter superNovaAqua
 
-hi! link markdownBlockquote gruvboxNeutralGray
-hi! link markdownListMarker gruvboxNeutralGray
-hi! link markdownOrderedListMarker gruvboxNeutralGray
-hi! link markdownRule gruvboxNeutralGray
-hi! link markdownHeadingRule gruvboxNeutralGray
+hi! link markdownBlockquote superNovaGray
+hi! link markdownListMarker superNovaGray
+hi! link markdownOrderedListMarker superNovaGray
+hi! link markdownRule superNovaGray
+hi! link markdownHeadingRule superNovaGray
 
-hi! link markdownUrlDelimiter gruvboxNeutralFg3
-hi! link markdownLinkDelimiter gruvboxNeutralFg3
-hi! link markdownLinkTextDelimiter gruvboxNeutralFg3
+hi! link markdownUrlDelimiter superNovaFg3
+hi! link markdownLinkDelimiter superNovaFg3
+hi! link markdownLinkTextDelimiter superNovaFg3
 
-hi! link markdownHeadingDelimiter gruvboxNeutralOrange
-hi! link markdownUrl gruvboxNeutralPurple
-hi! link markdownUrlTitleDelimiter gruvboxNeutralGreen
+hi! link markdownHeadingDelimiter superNovaOrange
+hi! link markdownUrl superNovaPurple
+hi! link markdownUrlTitleDelimiter superNovaGreen
 
 call s:HL('markdownLinkText', s:gray, s:none, s:underline)
 hi! link markdownIdDeclaration markdownLinkText
@@ -1360,44 +1360,44 @@ hi! link markdownIdDeclaration markdownLinkText
 " }}}
 " Haskell: {{{
 
-" hi! link haskellType gruvboxNeutralYellow
-" hi! link haskellOperators gruvboxNeutralOrange
-" hi! link haskellConditional gruvboxNeutralAqua
-" hi! link haskellLet gruvboxNeutralOrange
+" hi! link haskellType superNovaYellow
+" hi! link haskellOperators superNovaOrange
+" hi! link haskellConditional superNovaAqua
+" hi! link haskellLet superNovaOrange
 "
-hi! link haskellType gruvboxNeutralFg1
-hi! link haskellIdentifier gruvboxNeutralFg1
-hi! link haskellSeparator gruvboxNeutralFg1
-hi! link haskellDelimiter gruvboxNeutralFg4
-hi! link haskellOperators gruvboxNeutralBlue
+hi! link haskellType superNovaFg1
+hi! link haskellIdentifier superNovaFg1
+hi! link haskellSeparator superNovaFg1
+hi! link haskellDelimiter superNovaFg4
+hi! link haskellOperators superNovaBlue
 "
-hi! link haskellBacktick gruvboxNeutralOrange
-hi! link haskellStatement gruvboxNeutralOrange
-hi! link haskellConditional gruvboxNeutralOrange
+hi! link haskellBacktick superNovaOrange
+hi! link haskellStatement superNovaOrange
+hi! link haskellConditional superNovaOrange
 
-hi! link haskellLet gruvboxNeutralAqua
-hi! link haskellDefault gruvboxNeutralAqua
-hi! link haskellWhere gruvboxNeutralAqua
-hi! link haskellBottom gruvboxNeutralAqua
-hi! link haskellBlockKeywords gruvboxNeutralAqua
-hi! link haskellImportKeywords gruvboxNeutralAqua
-hi! link haskellDeclKeyword gruvboxNeutralAqua
-hi! link haskellDeriving gruvboxNeutralAqua
-hi! link haskellAssocType gruvboxNeutralAqua
+hi! link haskellLet superNovaAqua
+hi! link haskellDefault superNovaAqua
+hi! link haskellWhere superNovaAqua
+hi! link haskellBottom superNovaAqua
+hi! link haskellBlockKeywords superNovaAqua
+hi! link haskellImportKeywords superNovaAqua
+hi! link haskellDeclKeyword superNovaAqua
+hi! link haskellDeriving superNovaAqua
+hi! link haskellAssocType superNovaAqua
 
-hi! link haskellNumber gruvboxNeutralPurple
-hi! link haskellPragma gruvboxNeutralPurple
+hi! link haskellNumber superNovaPurple
+hi! link haskellPragma superNovaPurple
 
-hi! link haskellString gruvboxNeutralGreen
-hi! link haskellChar gruvboxNeutralGreen
+hi! link haskellString superNovaGreen
+hi! link haskellChar superNovaGreen
 
 " }}}
 " Json: {{{
 
-hi! link jsonKeyword gruvboxNeutralGreen
-hi! link jsonQuote gruvboxNeutralGreen
-hi! link jsonBraces gruvboxNeutralFg1
-hi! link jsonString gruvboxNeutralFg1
+hi! link jsonKeyword superNovaGreen
+hi! link jsonQuote superNovaGreen
+hi! link jsonBraces superNovaFg1
+hi! link jsonString superNovaFg1
 
 " }}}
 
@@ -1405,11 +1405,11 @@ hi! link jsonString gruvboxNeutralFg1
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
 
-function! s:gruvboxNeutralHlsShowCursor()
+function! s:superNovaHlsShowCursor()
   call s:HL('Cursor', s:bg0, s:hls_cursor)
 endfunction
 
-function! s:gruvboxNeutralHlsHideCursor()
+function! s:superNovaHlsHideCursor()
   call s:HL('Cursor', s:none, s:none, s:inverse)
 endfunction
 

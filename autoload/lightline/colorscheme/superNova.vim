@@ -1,8 +1,8 @@
 " -----------------------------------------------------------------------------
-" File: gruvbox-neutral.vim
+" File: superNova.vim
 " Description: Retro groove color scheme for Vim based on gruvbox
 " Author: bvgross <bvgross@gmx.com>
-" Source: https://github.com/bvgross/gruvbox-neutral
+" Source: https://github.com/bvgross/superNova
 " Last Modified: 08 jul 2022
 " -----------------------------------------------------------------------------
 
@@ -14,18 +14,18 @@ endfunction
 
 if exists('g:lightline')
 
-  let s:bg0  = s:getGruvColor('gruvboxNeutralBg0')
-  let s:bg1  = s:getGruvColor('gruvboxNeutralBg1')
-  let s:bg2  = s:getGruvColor('gruvboxNeutralBg2')
-  let s:bg4  = s:getGruvColor('gruvboxNeutralBg4')
-  let s:fg1  = s:getGruvColor('gruvboxNeutralFg1')
-  let s:fg4  = s:getGruvColor('gruvboxNeutralFg4')
+  let s:bg0  = s:getGruvColor('superNovaBg0')
+  let s:bg1  = s:getGruvColor('superNovaBg1')
+  let s:bg2  = s:getGruvColor('superNovaBg2')
+  let s:bg4  = s:getGruvColor('superNovaBg4')
+  let s:fg1  = s:getGruvColor('superNovaFg1')
+  let s:fg4  = s:getGruvColor('superNovaFg4')
 
-  let s:yellow = s:getGruvColor('gruvboxNeutralYellow')
-  let s:blue   = s:getGruvColor('gruvboxNeutralBlue')
-  let s:aqua   = s:getGruvColor('gruvboxNeutralAqua')
-  let s:orange = s:getGruvColor('gruvboxNeutralOrange')
-  let s:green = s:getGruvColor('gruvboxNeutralGreen')
+  let s:yellow = s:getGruvColor('superNovaYellow')
+  let s:blue   = s:getGruvColor('superNovaBlue')
+  let s:aqua   = s:getGruvColor('superNovaAqua')
+  let s:orange = s:getGruvColor('superNovaOrange')
+  let s:green = s:getGruvColor('superNovaGreen')
 
   let s:p = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, 'tabline':{}, 'terminal':{}}
   let s:p.normal.left = [ [ s:bg0, s:fg4, 'bold' ], [ s:fg4, s:bg2 ] ]
@@ -53,5 +53,5 @@ if exists('g:lightline')
   let s:p.normal.error = [ [ s:bg0, s:orange ] ]
   let s:p.normal.warning = [ [ s:bg2, s:yellow ] ]
 
-  let g:lightline#colorscheme#gruvboxNeutral#palette = lightline#colorscheme#flatten(s:p)
+  let g:lightline#colorscheme#superNova#palette = lightline#colorscheme#flatten(s:p)
 endif
