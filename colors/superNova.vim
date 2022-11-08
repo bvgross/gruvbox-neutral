@@ -1,5 +1,5 @@
 " -----------------------------------------------------------------------------
-" File: gruvbox-neutral.vim
+" File: superNova.vim
 " Description: Retro groove color scheme for Vim based on gruvbox
 " Author: bvgross <bvgross@gmx.com>
 " Source: https://github.com/bvgross/gruvbox-neutral
@@ -16,7 +16,7 @@ if version > 580
   endif
 endif
 
-let g:colors_name='gruvbox-neutral'
+let g:colors_name='superNova'
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 256
   finish
