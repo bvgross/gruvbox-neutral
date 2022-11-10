@@ -22,6 +22,10 @@
       }
     },
     {
+      "name": "boolean",
+      "scope": "boolean"
+    },
+    {
       "name": "haskell variable generic-type",
       "scope": "variable.other.generic-type.haskell",
       "settings": {
@@ -600,7 +604,7 @@
       ],
       "settings": {
         "foreground": "#ffc234",
-				"fontStyle": "bold",
+        "fontStyle": "bold",
       }
     },
     {
@@ -759,15 +763,16 @@
       "scope": "constant.numeric",
       "settings": {
         "foreground": "#d7db11",
-				"fontStyle": "bold",
+        "fontStyle": "bold",
       }
     },
     {
       "name": "Constants",
       "scope": "constant",
       "settings": {
-        "foreground": "#d7db11"
-      }
+        "foreground": "#FF4730",
+        "fontStyle": "bold",
+      },
     },
     {
       "name": "Constants",
@@ -2095,4 +2100,3 @@
     "debugExceptionWidget.border": "#474747"
   }
 }
-
