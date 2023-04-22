@@ -1,5 +1,3 @@
-<!--p align="center"><img src="http://svgur.com/i/3Dp.svg"></p-->
-
 Modified version of gruvbox from [morhetz][] which is is heavily inspired by [badwolf][], [jellybeans][] and [solarized][].
 
    [morhetz]: https://github.com/morhetz/gruvbox

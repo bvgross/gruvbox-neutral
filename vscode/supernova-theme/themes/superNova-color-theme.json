@@ -23,7 +23,11 @@
     },
     {
       "name": "boolean",
-      "scope": "boolean"
+      "scope": "boolean",
+      "settings": {
+        "foreground": "#EE4733",
+        "fontStyle": "bold"
+      }
     },
     {
       "name": "haskell variable generic-type",
@@ -799,7 +803,6 @@
       "name": "Attribute IDs",
       "scope": "entity.other.attribute-name.id",
       "settings": {
-        "fontStyle": "normal",
         "foreground": "#ffc234"
       }
     },
@@ -807,7 +810,6 @@
       "name": "Attribute class",
       "scope": "entity.other.attribute-name.class.css",
       "settings": {
-        "fontStyle": "normal",
         "foreground": "#d7db11"
       }
     },

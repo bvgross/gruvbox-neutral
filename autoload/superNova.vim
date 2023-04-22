@@ -1,38 +1,38 @@
 " -----------------------------------------------------------------------------
-" File: gruvbox-neutral.vim
+" File: superNova.vim
 " Description: Retro groove color scheme for Vim based on gruvbox
 " Author: bvgross <bvgross@gmx.com>
-" Source: https://github.com/bvgross/gruvbox-neutral
-" Last Modified: 08 jul 2022
+" Source: https://github.com/bvgross/superNovaTheme
+" Last Modified: 22 apr 2023
 " -----------------------------------------------------------------------------
 
-function! gruvboxNeutral#invert_signs_toggle()
-  if g:gruvboxNeutral_invert_signs == 0
-    let g:gruvboxNeutral_invert_signs=1
+function! superNova#invert_signs_toggle()
+  if g:superNova_invert_signs == 0
+    let g:superNova_invert_signs=1
   else
-    let g:gruvboxNeutral_invert_signs=0
+    let g:superNova_invert_signs=0
   endif
 
-  colorscheme gruvboxNeutral
+  colorscheme superNova
 endfunction
 
 " Search Highlighting {{{
 
-function! gruvboxNeutral#hls_show()
+function! superNova#hls_show()
   set hlsearch
-  call gruvboxNeutralHlsShowCursor()
+  call superNovaHlsShowCursor()
 endfunction
 
-function! gruvboxNeutral#hls_hide()
+function! superNova#hls_hide()
   set nohlsearch
-  call gruvboxNeutralHlsHideCursor()
+  call superNovaHlsHideCursor()
 endfunction
 
-function! gruvboxNeutral#hls_toggle()
+function! superNova#hls_toggle()
   if &hlsearch
-    call gruvboxNeutral#hls_hide()
+    call superNova#hls_hide()
   else
-    call gruvboxNeutral#hls_show()
+    call superNova#hls_show()
   endif
 endfunction
 
