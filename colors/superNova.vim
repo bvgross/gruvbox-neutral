@@ -626,7 +626,7 @@ hi! link Number superNovaGreenBold
 hi! link Float superNovaGreenBold
 
 " Generic type
-hi! link Type superNovaOrange
+hi! link Type superNovaFg0
 " static, register, volatile, etc
 hi! link StorageClass superNovaYellow
 " struct, union, enum, etc.
