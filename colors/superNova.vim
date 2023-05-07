@@ -578,7 +578,7 @@ call s:HL('Todo', s:vim_fg, s:vim_bg, s:bold . s:italic)
 call s:HL('Error', s:red, s:vim_bg, s:bold . s:inverse)
 
 " Generic statement
-hi! link Statement superNovaFg1
+hi! link Statement superNovaFg0
 " if, then, else, endif, swicth, etc.
 hi! link Conditional superNovaPurple
 " for, do, while, etc.
@@ -593,7 +593,7 @@ hi! link Operator superNovaBlue
 hi! link Keyword superNovaRed
 
 " Variable name
-hi! link Identifier superNovaBlue
+hi! link Identifier superNovaFg0
 " Function name
 hi! link Function superNovaYellowBold
 
